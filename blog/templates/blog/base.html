@@ -16,10 +16,15 @@
     
     <div class="page-header">
         <h1><a href="/">WalkIn -> Triage -> Registration</a></h1>
+        <!-- Authenticate users sessions -->
+        {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus bg-infor"></span></a>
+        {% endif %}
     </div>
-
+    
     <div class="content container">
         <div class="row">
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <div class="col-md-8">
             {% block content %}
             {% endblock %}
